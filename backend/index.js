@@ -10,7 +10,17 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.status(200).json({
+        message : "health check"
+    })
+});
+
+app.post('/api/register', (req, res) => {
+    console.log(req.body);
+    res.status(200).json({
+        message : "Data received",
+        data : req.body
+    });
 });
 
 
